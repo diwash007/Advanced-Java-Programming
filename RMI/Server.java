@@ -4,9 +4,9 @@ import java.rmi.registry.*;
 public class Server {
     public static void main(String[] args) {
         try {
-            HelloRemote obj = new HelloRemote();
-            Registry rgsty = LocateRegistry.createRegistry(1888);
-            rgsty.rebind("hello", obj);
+            CalcRemote obj = new CalcRemote();
+            Registry rgsty = LocateRegistry.createRegistry(9000);
+            rgsty.rebind("multiply", obj);
             System.out.println("Server ready");
         }
         catch(Exception e) {
