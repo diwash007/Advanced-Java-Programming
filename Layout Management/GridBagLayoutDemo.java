@@ -1,18 +1,13 @@
-import java.awt.Button;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import javax.swing.*;
 
 public class GridBagLayoutDemo {
     public static void main(String[] args) {
         JFrame f = new JFrame();
-        GridBagLayout grid = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
-        f.setLayout(grid);
-        GridBagLayout layout = new GridBagLayout();
-        f.setLayout(layout);
+        f.setLayout(new GridBagLayout());
 
-        // gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy = 0;
         f.add(new Button("Button One"), gbc);
@@ -21,7 +16,7 @@ public class GridBagLayoutDemo {
         gbc.gridy = 0;
         f.add(new Button("Button two"), gbc);
 
-        // gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 20;
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -33,7 +28,7 @@ public class GridBagLayoutDemo {
 
         gbc.gridx = 0;
         gbc.gridy = 2;
-        // gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridwidth = 2;
         f.add(new Button("Button Five"), gbc);
 
