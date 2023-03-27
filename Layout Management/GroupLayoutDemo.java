@@ -3,35 +3,31 @@ import java.awt.*;
 
 public class GroupLayoutDemo {
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        frame.setSize(600, 600);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JFrame f = new JFrame();
+        f.setSize(600, 600);
 
-        Container container = frame.getContentPane();
-        GroupLayout groupLayout = new GroupLayout(container);
-        container.setLayout(groupLayout);
+        Container c = f.getContentPane();
+        GroupLayout gl = new GroupLayout(c);
+        c.setLayout(gl);
 
-        JLabel label = new JLabel("Label");
-        JButton button1 = new JButton("First");
-        JButton button2 = new JButton("Second");
+        JButton btn1 = new JButton("btn1");
+        JButton btn2 = new JButton("btn2");
+        JButton btn3 = new JButton("btn3");
 
-        groupLayout.setHorizontalGroup(
-                groupLayout.createSequentialGroup()
-                        .addComponent(label)
-                        .addGroup(
-                                groupLayout.createParallelGroup()
-                                        .addComponent(button1)
-                                        .addComponent(button2)));
+        gl.setHorizontalGroup(gl.createSequentialGroup()
+                .addComponent(btn1)
+                .addGroup(
+                        gl.createParallelGroup()
+                                .addComponent(btn2)
+                                .addComponent(btn3)));
 
-        groupLayout.setVerticalGroup(
-                groupLayout.createSequentialGroup().addGroup(
-                        groupLayout.createParallelGroup()
-                                .addComponent(label)
-                                .addGroup(
-                                        groupLayout.createSequentialGroup()
-                                                .addComponent(button1)
-                                                .addComponent(button2))));
+        gl.setVerticalGroup(gl.createParallelGroup()
+                .addComponent(btn1)
+                .addGroup(
+                        gl.createSequentialGroup()
+                                .addComponent(btn2)
+                                .addComponent(btn3)));
 
-        frame.setVisible(true);
+        f.setVisible(true);
     }
 }
